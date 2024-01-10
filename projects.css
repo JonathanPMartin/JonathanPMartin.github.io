@@ -48,16 +48,31 @@ body, html
     
 }
 .buttons{
-    display: flex; 
-    align-items: center; 
-
-    justify-content: center; 
+    font-size:70%;
 }
-
 .slide{
-    width: 30%;
+    height: 80%;
+    width: 100%;
+    font-size: 80%;
     overflow-wrap: break-word;  
     word-wrap: break-word; 
     word-break: break-word;
     display: None;
+}
+@media only screen and (min-width: 768px) {
+
+.slide{
+    width: 50%;
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
+    display: None;
+    font-size: 100%;
+}
+.buttons{
+    display: flex; 
+    align-items: baseline; 
+
+    justify-content: center; 
+}
 }
