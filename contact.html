@@ -47,7 +47,7 @@
           resize: vertical;
         }
         
-        input[type=submit] {
+        .button {
           background-color: #04AA6D;
           color: white;
           padding: 12px 20px;
@@ -56,7 +56,7 @@
           cursor: pointer;
         }
         
-        input[type=submit]:hover {
+        .button:hover {
           background-color: #45a049;
         }
         
@@ -82,7 +82,8 @@
         content:ResponceBody
       }
 
-      request.send(JSON.stringify(params));
+     request.send(JSON.stringify(params));
+      window.open('index.html','_self');
       alert('thank you for the message, ill get to you as soon as i can -jonathan')
     }
     </script>
@@ -100,7 +101,7 @@
     <label for="subject">Message</label>
     <textarea id="subject" name="subject" placeholder="message you'd like to send.." style="height:200px"></textarea>
 
-    <input type="submit" value="Submit" onclick="sendMessage()">
+    <button class="button" onclick="sendMessage()"> Submit</button>
   </form>
 </div>
 	<script src="index.js"></script>
