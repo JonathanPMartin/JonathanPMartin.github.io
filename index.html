@@ -36,11 +36,10 @@
            
         </div>
         <ul class="sidenav" id="mobile-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-               
-                <li><a href="cv.html">CV</a></li>
+                <li><a href="#about" onclick="closeSidenav()">About</a></li>
+                <li><a href="#projects"  onclick="closeSidenav()">Projects</a></li>
+                <li><a href="#contact"  onclick="closeSidenav()">Contact</a></li>
+                <li><a href="cv.html"  onclick="closeSidenav()">CV</a></li>
                 
         </ul>
     </nav>
@@ -109,8 +108,14 @@
     
          request.send(JSON.stringify(params));
          
-          alert('thank you for the message, ill get to you as soon as i can -jonathan')
+          alert('thank you for the message, ill get to you as soon as i can -Jonathan')
           window.open('index.html','_self');
+        }
+
+        function closeSidenav() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+            instances[0].close();
         }
         </script>
     <section class="scrollspy section container" id="contact" style="padding-top: 50px;">
