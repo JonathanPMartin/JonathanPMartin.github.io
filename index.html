@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /*.active{
+            background-color: green;
+        }
+        */
+        nav .badge{ 
+            /* changing the syles of the navbar badge for learning how badges work*/
+            position: relative;
+            top:20px;
+            right:20px;
+        }
+    </style>
+    <!-- learning nav bar set up this is staying up for future refrence-->
+    <nav class="nav-wrapper indigo navbar-fixed">
+        <div class="container">
+            <a href="" class="sidenav-trigger hide-on-large-only" data-target="mobile-links"><i class="material-icons">menu</i></a>
+            <ul class="center hide-on-med-and-down">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+               
+                <li><a href="cv.html">CV</a></li>
+               <!-- the class new just puts the word new next to it also this is is a demo for how badges work-->
+            </ul>
+           
+        </div>
+        <ul class="sidenav" id="mobile-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+               
+                <li><a href="cv.html">CV</a></li>
+                
+        </ul>
+    </nav>
+    <style>
+        .nav-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the navbar is above other content */
+}
+    </style>
+    <div class="container" style="padding-top: 50px;" class="scrollspy" id="about">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col s12 m6">
+                <img src="me.jpg" class="responsive-img" alt="Your Image" style="height: 450px;">
+            </div>
+            <div class="col s12 m6">
+                <h3 >About Me</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                <p>Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
+            </div>
+    </div>
+    <div class="container" style="padding-top:50px;" class="scrollspy" id="projects">
+        <h4 class="center-align">Projects</h4>
+        <br>
+       
+
+        <div class="carousel carousel-slider center" style="border: 2px solid black; padding: 10px;">
+            <div class="carousel-item teal lighten-1 grey-text text-lighten-2" href="#one!" >
+              <h2>First Panel</h2>
+              <p class="grey-text text-lighten-2">This is your first panel with loads of data in it just to test if there is any limit or to see if it wraps the text correctly in each instance This is your first panel with loads of data in it just to test if there is any limit or to see if it wraps the text correctly in each instance</p>
+            </div>
+            <div class="carousel-item teal darken-1 grey-text text-lighten-2" href="#two!">
+              <h2>Second Panel</h2>
+              <p class="grey-text text-lighten-2">This is your second panel</p>
+            </div>
+            <div class="carousel-item  teal accent-4 grey-text text-lighten-2" href="#three!">
+              <h2>Third Panel</h2>
+              <p class="grey-text text-lighten-2">This is your third panel</p>
+            </div>
+            <div class="carousel-item teal grey-text text-lighten-2" href="#four!">
+              <h2>Fourth Panel</h2>
+              <p class="grey-text text-lighten-2">This is your fourth panel</p>
+            </div>
+          </div>
+
+         
+    </div>
+    <script>
+        function sendMessage() {
+            console.log('TEST')
+          const request = new XMLHttpRequest();
+          request.open("POST", "https://discord.com/api/webhooks/1210572089346756619/Zql7-2RVpkcCqlaSDUnuczU5o_FJ_NMrAGOTWc-Bs0TjKi-t9-ffTNUs-vgc1jFCBB2Y");
+    
+          request.setRequestHeader('Content-type', 'application/json');
+          let message= document.getElementById('message').value
+         let email=document.getElementById('email').value
+         let ResponceBody='@here\nFrom: '+email+'\n\nmessage:\n'+message
+          const params = {
+            username: "My Webhook Name",
+            avatar_url: "",
+            content:ResponceBody
+          }
+    
+         request.send(JSON.stringify(params));
+         
+          alert('thank you for the message, ill get to you as soon as i can -jonathan')
+          window.open('index.html','_self');
+        }
+        </script>
+    <section class="scrollspy section container" id="contact" style="padding-top: 50px;">
+        <div class="row">
+          <div class="col s12 l5">
+            <h3 class="idigo-text text-darken-4">Want to Contact me?</h3>
+            <h4> Send me a message!</h4>
+           
+            
+          </div>
+          <div class="col s12 l5 offset-l2">
+            <form action="">
+              <div class="input-field">
+                <i class="material-icons prefix">email</i>
+                <input type="email" id="email">
+                <label for="email">Your Email:</label>
+               
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix">message</i>
+               <textarea name="" id="message" cols="30" rows="10" class="materialize-textarea"></textarea>
+               <label for="message">Your Message:</label>
+               
+              </div>
+                <div class="input-feild center">
+                  <button class="btn" onclick="sendMessage()">submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+       </section>
+
+ 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>  
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   
+    <script>
+         $(document).ready(function(){
+        $('.sidenav').sidenav()
+        $('.scrollspy').scrollSpy();
+        $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+    })
+    </script>
+</body>
+</html>

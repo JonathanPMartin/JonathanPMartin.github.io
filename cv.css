@@ -1,0 +1,45 @@
+body, html
+            {
+                margin: 0; padding: 0; height: 100%; overflow: hidden;
+            }
+
+            #content
+            {
+                position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
+            }
+.topnav {
+    background-color:#3f51b5;
+    overflow: hidden;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:100px;
+    justify-content: center;
+}
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #3949A3;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  .TopHeader{
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+  }
+  .cv{
+    width:100%;
+     height:100%;
+  }
