@@ -31,14 +31,15 @@ header {
 #player-container {
     display: none;
     display: grid;
-    height: 50%;
-    width: 100%;
-    grid-gap: 10px;
+    height: 90%; /* Reduced height to create padding at the bottom */
+    width: 90%;  /* Reduced width to create padding on the sides */
+    margin: auto;
+    grid-gap: 10px; /* Add some space between the player grids */
 }
 
 .player {
     background-color: #3b3f46;
-    padding: 20px;
+    padding: 15px; /* Adjust padding for consistent sizing */
     border-radius: 10px;
     text-align: center;
     display: flex;
@@ -49,19 +50,19 @@ header {
 }
 
 .player h2 {
-    font-size: 24px;
+    font-size: 22px; /* Slightly smaller font size */
     margin-bottom: 10px;
 }
 
 .life-total, .commander-damage {
-    font-size: 24px;
+    font-size: 22px; /* Slightly smaller font size */
     margin: 10px 0;
 }
 
 button {
-    font-size: 18px;
+    font-size: 16px; /* Slightly smaller font size */
     margin: 5px;
-    padding: 10px 20px;
+    padding: 8px 16px; /* Reduced padding */
     border: none;
     border-radius: 5px;
     background-color: #61dafb;
@@ -80,4 +81,31 @@ button:hover {
 
 .rotate-180 {
     transform: rotate(180deg);
+}
+
+.life-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.life-total {
+    font-size: 22px; /* Font size for life total */
+    margin: 0 10px;  /* Space between buttons and life total */
+}
+
+.life-button {
+    font-size: 16px; /* Font size for buttons */
+    margin: 0 5px;   /* Space between buttons */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #61dafb;
+    color: #282c34;
+    cursor: pointer;
+}
+
+.life-button:hover {
+    background-color: #21a1f1;
 }

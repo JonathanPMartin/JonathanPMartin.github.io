@@ -24,9 +24,8 @@ function startGame() {
 }
 
 function adjustGridLayout() {
-    const adjustedPlayerCount = playerCount % 2 === 0 ? playerCount : playerCount + 1;
-    const rows = Math.ceil(adjustedPlayerCount / 2);
-    const columns = adjustedPlayerCount > 2 ? 2 : 1;
+    const rows = 2;
+    const columns = Math.ceil(playerCount / rows);
 
     playerContainer.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
     playerContainer.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
@@ -53,9 +52,11 @@ function createPlayerUI(playerNumber) {
     playerDiv.classList.add(rotationClass);
     
     playerDiv.innerHTML = `
-        <div class="life-total" id="player${playerNumber}-life">${lifeStartingTotal}</div>
-        <button onmousedown="startLifeUpdate(${playerNumber}, 1)" onmouseup="stopLifeUpdate()">+1</button>
-        <button onmousedown="startLifeUpdate(${playerNumber}, -1)" onmouseup="stopLifeUpdate()">-1</button>
+        <div class="life-controls">
+            <button class="life-button" onmousedown="startLifeUpdate(${playerNumber}, 1)" onmouseup="stopLifeUpdate()">+1</button>
+            <div class="life-total" id="player${playerNumber}-life">${lifeStartingTotal}</div>
+            <button class="life-button" onmousedown="startLifeUpdate(${playerNumber}, -1)" onmouseup="stopLifeUpdate()">-1</button>
+        </div>
         <h3>Commander Damage</h3>
         ${generateCommanderDamageUI(playerNumber)}
     `;
@@ -64,9 +65,10 @@ function createPlayerUI(playerNumber) {
 }
 
 function getRotationClass(playerNumber) {
-    const halfPlayers = Math.ceil(playerCount / 2);
+    // Determine rotation based on player position
+    const columns = Math.ceil(playerCount / 2);
     
-    if (playerNumber <= halfPlayers) {
+    if (playerNumber <= columns) {
         return 'rotate-180';
     } else {
         return 'rotate-0';
@@ -77,9 +79,8 @@ function generateCommanderDamageUI(playerNumber) {
     let html = '';
     html += `<select id="player${playerNumber}-commander-source" class="commander-source">`;
     for (let i = 1; i <= playerCount; i++) {
-        if (i !== playerNumber) {
+        
             html += `<option value="${i}">Player ${i}</option>`;
-        }
     }
     html += `</select>`;
     
