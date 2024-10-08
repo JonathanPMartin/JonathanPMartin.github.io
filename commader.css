@@ -11,7 +11,7 @@ body {
 
 header {
     background-color: #1b1f23;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -19,7 +19,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 90%;
 }
 
 #init-form {
@@ -31,7 +31,7 @@ header {
 #player-container {
     display: none;
     display: grid;
-    height: 90%; /* Reduced height to create padding at the bottom */
+    height: 80%; /* Reduced height to create padding at the bottom */
     width: 90%;  /* Reduced width to create padding on the sides */
     margin: auto;
     grid-gap: 10px; /* Add some space between the player grids */
@@ -109,3 +109,10 @@ button:hover {
 .life-button:hover {
     background-color: #21a1f1;
 }
+@media only screen and (max-width: 600px) {
+    
+    
+    
+  }
+  
+  
